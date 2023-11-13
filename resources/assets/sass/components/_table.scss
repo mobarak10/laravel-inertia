@@ -1,0 +1,29 @@
+.table {
+    tr {
+        vertical-align: middle;
+    }
+    th,
+    td,
+    tr {
+        border: 1px dotted var(--light-color);
+        color: var(--black-color);
+        text-transform: capitalize;
+        .photo {
+            max-height: 50px;
+            max-width: 50px;
+            object-fit: cover;
+        }
+    }
+    &:not(.table-bordered) {
+        tr,
+        th {
+            border-top: none;
+        }
+        td,
+        tr,
+        th {
+            border-left: none;
+            border-right: none;
+        }
+    }
+}

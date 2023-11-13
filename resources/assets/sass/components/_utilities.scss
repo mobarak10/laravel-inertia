@@ -1,0 +1,441 @@
+// font CDN ===================================>
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Noto+Sans+Bengali:wght@100;200;300;400;500;600;700;800;900&display=swap");
+// End font CDN ===============================>
+
+// Start Body ===========================================>
+body {
+  background-color: var(--bg-color);
+  font-family: "Assistant", "Noto Sans Bengali", sans-serif;
+  @include scrollbar;
+  ::selection {
+    background-color: var(--theme-color);
+    color: var(--white-color);
+  }
+}
+// End Body ===========================================>
+
+// Start focus ===========================================>
+*:focus {
+  box-shadow: none !important;
+}
+// End focus ===========================================>
+
+// Start a tag ===========================================>
+a {
+  color: var(--theme-color);
+  &:hover {
+    color: var(--theme-darken);
+  }
+}
+// End a tag ===========================================>
+
+// Start main bar ===========================================>
+.main-bar {
+  margin-left: 280px;
+  margin-top: 70px;
+  &.main-bar-expand {
+    margin-left: 0;
+  }
+  @media only screen and (max-width: 1400px) {
+    margin-left: 0;
+  }
+}
+// End main bar ===========================================>
+
+// Start bg color ===========================================>
+.bg-primary {
+  background-color: var(--theme-color) !important;
+}
+.bg-success {
+  background-color: var(--success-color) !important;
+}
+.bg-warning {
+  background-color: var(--warning-color) !important;
+}
+.bg-danger {
+  background-color: var(--danger-color) !important;
+}
+// End bg color ===========================================>
+
+// Start text color ===========================================>
+.text-primary {
+  color: var(--theme-color) !important;
+}
+.text-success {
+  color: var(--success-color) !important;
+}
+.text-warning {
+  color: var(--warning-color) !important;
+}
+.text-danger {
+  color: var(--danger-color) !important;
+}
+// End text color ===========================================>
+
+// Start Wrapper ===========================================>
+.widget {
+  background-color: var(--white-color);
+  @include scrollbar;
+  padding: 1rem 0;
+  .widget-head {
+    padding: 0 1rem;
+  }
+  .title-sm {
+    font-weight: bold;
+    font-size: 15px;
+    display: block;
+    text-transform: uppercase;
+    color: var(--secondary-color);
+  }
+  .widget-body {
+    padding: 0 1rem;
+  }
+  .widget-foot {
+    border-top: 1px solid var(--bg-color);
+    padding: 0 1rem;
+  }
+  .navbar {
+    padding: 0;
+    .nav-item {
+      padding: 0 10px;
+      &:first-child {
+        padding-left: 0;
+      }
+      .nav-link {
+        font-size: 16px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        transition: all ease 0.3s;
+        color: var(--secondary-color);
+        &:hover {
+          box-shadow: $common-shadow;
+        }
+        &.active {
+          background-color: var(--theme-color);
+          color: white;
+        }
+      }
+    }
+  }
+}
+// End Wrapper ===========================================>
+
+// Start table ===========================================>
+.print-show {
+  display: none;
+}
+@media print {
+  .print-show {
+    display: block;
+  }
+  .print-none {
+    display: none !important;
+  }
+}
+// End table ===========================================>
+
+// Start List ==========================>
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+// End List ==========================>
+
+// Start typography ==========================>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 0;
+  color: var(--black-color);
+}
+small {
+  color: var(--secondary-color);
+}
+// End typography ==========================>
+
+// Start accordion ===============================>
+.accordion {
+  .accordion-item,
+  .accordion-button {
+    background-color: var(--white-color);
+    color: var(--black-color);
+  }
+  .accordion-button {
+    &:not(.collapsed) {
+      background-color: var(--bg-color);
+    }
+  }
+}
+// End accordion ===============================>
+
+// Start card ===================================>
+.card {
+  border-radius: 0;
+  background-color: var(--bg-color);
+  color: var(--secondary-color);
+  border-color: var(--light-color) !important;
+  .card-header,
+  .card-footer {
+    border-color: var(--light-color);
+  }
+  .card-img {
+    border-radius: 0;
+  }
+}
+// End card ===================================>
+
+// Start stats-icon ===================================>
+.stats-icon {
+  color: var(--theme-color);
+  width: 42px;
+  height: 42px;
+  background-color: var(--theme-light);
+  text-align: center;
+  line-height: 42px;
+  border-radius: 5px;
+  font-size: 0.957rem;
+  &.success {
+    color: var(--success-color);
+    background-color: rgba($color: $success-color, $alpha: 25%);
+  }
+  &.warning {
+    color: var(--warning-color);
+    background-color: rgba($color: $warning-color, $alpha: 25%);
+  }
+  &.danger {
+    color: var(--danger-color);
+    background-color: rgba($color: $danger-color, $alpha: 25%);
+  }
+}
+// End stats-icon ===================================>
+
+// Start alert ===================================>
+.alert {
+  border-radius: 0;
+  border: none;
+  &.alert-primary {
+    background-color: var(--theme-light);
+  }
+}
+#liveAlertPlaceholder {
+  position: fixed;
+  top: 50px;
+  z-index: 999;
+  right: 20px;
+  max-width: 500px;
+  .alert {
+    margin-top: 10px;
+    border: 1px solid var(--secondary-color);
+  }
+}
+// End alert ===================================>
+
+// Start list group ===================================>
+.list-group {
+  border-radius: 0;
+  .list-group-item {
+    background-color: var(--white-color);
+    border-color: var(--light-color);
+    color: var(--secondary-color);
+    &.active {
+      background-color: var(--theme-color);
+      color: var(--white-color);
+      .form-check-label {
+        color: var(--white-color);
+        font-weight: bold;
+      }
+      .form-check-input {
+        border: 1px solid var(--bg-color);
+      }
+      .badge {
+        background-color: var(--white-color);
+        color: var(--theme-color);
+      }
+    }
+    .badge {
+      background-color: var(--theme-color);
+    }
+  }
+}
+// End list group ===================================>
+
+// Start modal ===================================>
+.modal-content {
+  border-radius: 0;
+  background-color: var(--white-color);
+  .modal-header,
+  .modal-footer {
+    padding: 10px;
+  }
+  .modal-body {
+    color: var(--black-color);
+  }
+}
+// End modal ===================================>
+
+// Start toast ===================================>
+.toast-container {
+  .toast {
+    border-radius: 0;
+    border-color: var(--light-color);
+    .toast-header {
+      background-color: var(--bg-color);
+      border-radius: 0;
+    }
+    .toast-body {
+      background-color: var(--white-color);
+      color: var(--black-color);
+    }
+    img {
+      width: 20px;
+      height: 20px;
+      object-fit: cover;
+    }
+  }
+}
+// End toast ===================================>
+
+// Start Offcanvas ===================================>
+.offcanvas {
+  .offcanvas-body {
+    color: var(--black-color) !important;
+  }
+}
+// End Offcanvas ===================================>
+
+// Start nav tabs ===================================>
+.nav-tabs {
+  border-color: var(--theme-color);
+  .nav-link {
+    border-radius: 0;
+    color: var(--theme-color);
+    &.active {
+      border-color: var(--theme-color);
+      border-bottom: 0;
+      background-color: var(--white-color);
+      color: var(--black-color);
+    }
+  }
+}
+.tab-content {
+  color: var(--black-color);
+  margin-top: 10px;
+}
+// End nav tabs ===================================>
+
+// Start badge ===================================>
+.badge {
+  border-radius: 0;
+  &.bg-primary {
+    background-color: var(--theme-color) !important;
+  }
+}
+// End badge ===================================>
+
+// Start pagination ===================================>
+.pagination {
+  margin-bottom: 0;
+  .page-item {
+    .page-link {
+      color: var(--theme-color);
+      background-color: var(--white-color);
+      border-color: var(--light-color);
+      &:hover {
+        background-color: var(--bg-color);
+      }
+    }
+    &:last-child {
+      .page-link {
+        border-radius: 0;
+      }
+    }
+    &:first-child {
+      .page-link {
+        border-radius: 0;
+      }
+    }
+    &.active {
+      .page-link {
+        background-color: var(--theme-color);
+        border-color: var(--theme-color);
+        color: white;
+      }
+    }
+    &.disabled {
+      .page-link {
+        color: var(--secondary-color);
+      }
+    }
+  }
+}
+// End pagination ===================================>
+
+// Start progress ===================================>
+.progress {
+  border-radius: 0;
+  .progress-bar {
+    background-color: var(--theme-color);
+  }
+}
+// End progress ===================================>
+// Start map ===================================>
+.map {
+  path {
+    fill: var(--theme-darken);
+    transition: all ease 0.3s;
+    &:hover {
+      fill: var(--theme-color);
+    }
+  }
+}
+// End map ===================================>
+
+// Start c3 ===================================>
+.c3 {
+  .tick,
+  .c3-legend-item,
+  .c3-chart-arcs-title {
+    fill: var(--black-color);
+  }
+}
+// End c3 ===================================>
+
+
+// nested list =============================>
+.nested-list{
+  .sub-nested{
+    margin-left: 40px;
+    position: relative;
+    &::before{
+      position: absolute;
+      content: '';
+      width: 2px;
+      height: 105%;
+      background-color: var(--light-color);
+      left: -20px;
+    }
+    li{
+      position: relative;
+      &::before{
+        position: absolute;
+        content: '';
+        width: 20px;
+        height: 10px;
+        border-radius: 0 0 0 10px;
+        border: 2px solid var(--light-color);
+        border-top: 0;
+        border-right: 0;
+        left: -20px;
+        top: 15px;
+      }
+    }
+    .sub-nested{
+      margin-left: 30px;
+    }
+  }
+}
+// nested list =============================>

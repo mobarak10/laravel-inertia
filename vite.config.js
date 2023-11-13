@@ -14,8 +14,10 @@ export default defineConfig({
         vue(),
     ],
 
-    resolve: name => {
-        const pages = import.meta.glob('./Pages/**/*.vue', { eager: true })
-        return pages[`./Pages/${name}.vue`]
+    resolve: {
+        alias: {
+            "~": "node_modules/",
+            '@': "resources/js",
+        },
     },
 });

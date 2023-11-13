@@ -1,0 +1,40 @@
+.authentication {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    height: 100vh;
+
+    .widget {
+        width: 400px;
+        .widget-head{
+            border-bottom: 1px solid var(--bg-color);
+            padding-bottom: 10px;
+        }
+        .widget-body{
+            h4{
+                text-transform: uppercase;
+            }
+            padding-top: 10px;
+        }
+        .widget-foot{
+            border-top: none;
+        }
+    }
+    .logo {
+        text-align: center;
+        img {
+            max-width: 156.28;
+            height: 38px;
+        }
+    }
+    &.signup {
+        .widget{
+            width: 500px;
+        }
+    }
+    @media only screen and (max-width: 600px){
+        background-color: var(--white-color);
+    }
+}

@@ -1,0 +1,81 @@
+// Start offcanvas button =========================== ->>
+.offcanvas-btn {
+    position: fixed;
+    right: 0;
+    bottom: 30px;
+    border-color: var(--secondary-color) !important;
+    border-radius: 50px 0 0 50px !important;
+    background-color: var(--white-color);
+    z-index: 9;
+    &:hover {
+        background-color: var(--theme-color) !important;
+        color: var(--white-color) !important;
+        padding-right: 10px;
+    }
+}
+// End offcanvas button =========================== ->>
+
+// Start offcanvas =========================== ->>
+.offcanvas {
+    .btn-close{
+        color: var(--secondary-color) !important;
+    }
+    background-color: var(--white-color);
+    .offcanvas-header {
+        .offcanvas-title {
+            text-transform: capitalize;
+            color: var(--black-color)
+        }
+    }
+    .offcanvas-body {
+        @include scrollbar;
+        .companies {
+            padding-left: 0;
+            list-style-type: none;
+            
+            @include flexBox($flex-wrap: wrap, $align-items: center, $justify-content: space-between);
+            .company-item {
+                margin-bottom: 15px;
+                width: 48%;
+                a {
+                    display: inline-block;
+                    text-align: center;
+                    padding: 20px 30px;
+                    background-color: var(--bg-color);
+                    border-radius: 5px;
+                    text-decoration: none;
+                    transition: all ease 0.3s;
+                    border: 1px solid transparent;
+                    img {
+                        width: 100%;
+                        border-radius: 100px;
+                    }
+                    p {
+                        margin-bottom: 0;
+                        margin-top: 10px;
+                        color: var(--black-color);
+                        font-size: 18px;
+                    }
+                    &:hover {
+                        border-color: var(--theme-color);
+                    }
+                    &.active {
+                        border-color: var(--theme-color);
+                        position: relative;
+                        &::after {
+                            position: absolute;
+                            content: "";
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 10px;
+                            background-color: var(--theme-color);
+                            right: 12px;
+                            top: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// End offcanvas =========================== ->>

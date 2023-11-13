@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InertiaTestController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,10 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return Inertia\Inertia::render('Welcome');
-//    return view('welcome');
-});
+
+Route::get('/', [InertiaTestController::class, 'index'])->name('first-route');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

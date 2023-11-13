@@ -1,0 +1,204 @@
+// Aside ===================================>
+aside {
+    width: 280px;
+    height: 100vh;
+    background-color: var(--white-color);
+    position: fixed;
+    left: 0;
+    top: 58px;
+    transition: all ease 0.1s;
+    z-index: 999;
+    border-top: 1px solid var(--bg-color);
+    overflow-y: scroll;
+    padding-bottom: 70px;
+    @include scrollbar;
+    &.hide-always{
+        left: -280px;
+        &.expand{
+            left: 0;
+        }
+    }
+    &.expand {
+        left: -280px;
+    }
+    
+    .top-logobar {
+        max-height: 62px;
+        border-bottom: 1px solid var(--bg-color);
+        width: 100%;
+        display: none;
+        padding-left: 12px;
+    }
+    .accordion {
+        list-style-type: none;
+        padding-left: 0;
+        width: 100%;
+        .accordion-item {
+            border: none;
+            background-color: var(--white-color);
+            .sigle-nav-link {
+                padding: 5px 5px 5px 22px;
+                color: var(--black-color);
+                transition: all linear 0.1s;
+                @include flexBox($align-items: center);
+                text-decoration: none;
+                text-transform: capitalize;
+                font-size: 16px;
+                i {
+                    font-size: 18px;
+                    margin-right: 10px;
+                    color: var(--black-color);
+                }
+                &.active {
+                    background-color: var(--theme-color);
+                    font-weight: bold;
+                    span,
+                    i {
+                        color: var(--white-color);
+                    }
+                    &:hover {
+                        background-color: var(--theme-darken);
+                    }
+                }
+                &:hover {
+                    background-color: var(--bg-color);
+                }
+            }
+            .accordion-item-title {
+                font-weight: bold;
+                font-size: 15px;
+                display: block;
+                padding: 5px 22px;
+                padding-bottom: 0;
+                text-transform: uppercase;
+                color: var(--secondary-color);
+            }
+            .accordion-button {
+                padding: 5px 10px 5px 22px;
+                background-color: var(--white-color);
+                color: var(--black-color);
+                @include flexBox($align-items: center);
+                text-decoration: none;
+                text-transform: capitalize;
+                i {
+                    font-size: 18px;
+                    margin-right: 10px;
+                    color: var(--black-color);
+                }
+                &:focus {
+                    box-shadow: none;
+                }
+                .bi-chevron-left {
+                    color: var(--black-color);
+                    transition: all ease 0.3s;
+                    margin-left: 5px;
+                    margin-right: 0;
+                }
+                &::after {
+                    display: none;
+                }
+                &:not(.collapsed) {
+                    background-color: var(--light-color);
+                    box-shadow: none;
+                    .bi-chevron-left {
+                        transform: rotate(-90deg);
+                    }
+                }
+                &:hover {
+                    background-color: var(--bg-color);
+                }
+            }
+            .accordion-collapse {
+                list-style-type: none;
+                padding-left: 0;
+                .nav-link {
+                    padding-left: 50px;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    position: relative;
+                    text-transform: capitalize;
+                    color: var(--black-color);
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        width: 7px;
+                        height: 7px;
+                        left: 27px;
+                        top: 15px;
+                        border-radius: 50%;
+                        border: 1px solid var(--secondary-color);
+                    }
+                    &:hover {
+                        background-color: var(--bg-color);
+                    }
+                    &.active {
+                        background-color: var(--theme-color);
+                        font-weight: bold;
+                        span {
+                            color: var(--white-color);
+                        }
+                        &:hover {
+                            background-color: var(--theme-darken);
+                        }
+                        &::before{
+                            border-color: var(--white-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media only screen and (max-width: 1400px) {
+        left: -280px;
+        top: 0;
+        &.expand {
+            left: 0;
+        }
+        .top-logobar {
+            @include flexBox($align-items: center);
+        }
+        .accordion {
+            .accordion-item {
+                .sigle-nav-link,
+                .accordion-button {
+                    border-bottom: 1px dashed var(--light-color);
+                }
+            }
+        }
+        &::-webkit-scrollbar {
+            width: 0px;
+        }
+    }
+}
+
+// aside background Shadow =============================== >
+#aside-layer {
+    position: fixed;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.5;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    z-index: 99;
+    display: none;
+    cursor: pointer;
+    &.show {
+        @media only screen and (max-width: 1400px) {
+            display: block;
+        }
+    }
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    &.a {
+        background-color: var(--success-color);
+    }
+    &.b {
+        background-color: var(--warning-color);
+    }
+    &.c {
+        background-color: var(--danger-color);
+    }
+}

@@ -1,0 +1,292 @@
+// Start logobar =======================>
+.top-logobar {
+    @include flexBox($align-items: center);
+    button {
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: 40px;
+        font-size: 27px;
+        color: var(--black-color);
+        line-height: 40px;
+        background-color: transparent;
+        transition: all ease 0.3s;
+        border: 1px solid transparent;
+        .bi::before,
+        [class^="bi-"]::before,
+        [class*=" bi-"]::before {
+            vertical-align: -2px;
+        }
+        &:hover {
+            background-color: var(--bg-color);
+            border-color: var(--light-color);
+        }
+    }
+    .navbar-brand {
+        padding: 10px;
+        display: inline-block;
+        img {
+            max-width: 156.28;
+            height: 38px;
+        }
+    }
+}
+// End logobar =======================>
+
+// Start navbar =======================>
+.navbar {
+    &.primary {
+        z-index: 99;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: var(--white-color);
+        padding: 0;
+        .navbar-toggler {
+            color: var(--black-color);
+        }
+
+        .navbar-nav {
+            flex-direction: row;
+            .nav-item {
+                .nav-link {
+                    width: 40px;
+                    height: 40px;
+                    text-align: center;
+                    border: none;
+                    border-radius: 40px;
+                    font-size: 18px;
+                    color: var(--black-color);
+                    background-color: transparent;
+                    transition: all ease 0.3s;
+                    line-height: 25px;
+                    &:hover {
+                        background-color: var(--bg-color);
+                        border-color: var(--light-color);
+                    }
+                    &:focus {
+                        background-color: var(--bg-color);
+                        border-color: var(--light-color);
+                    }
+                    &.user-button {
+                        padding: 0;
+                        margin-left: 10px;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 40px;
+                            object-fit: cover;
+                        }
+                    }
+                    &.new-alerts {
+                        position: relative;
+                        &::after {
+                            position: absolute;
+                            content: "";
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 10px;
+                            background-color: $danger-color;
+                            top: 10px;
+                            right: 10px;
+                        }
+                    }
+                }
+                &.dropdown {
+                    position: relative;
+                    hr {
+                        margin: 0;
+                        color: var(--secondary-color);
+                    }
+                    .dropdown-menu {
+                        position: absolute;
+                        background-color: var(--white-color);
+                        right: 0;
+                        left: auto;
+                        top: 47px;
+                        min-width: 250px;
+                        max-height: 50vh;
+                        overflow-y: scroll;
+                        @include scrollbar;
+                        border-radius: 0;
+                        border: none;
+                        box-shadow: $common-shadow;
+                        .dropdown-item {
+                            padding: 5px 20px;
+                            font-size: 16px;
+                            transition: all ease 0.3s;
+                            @include flexBox($align-items: center);
+                            position: relative;
+                            &:active {
+                                background-color: #ced1d3 !important;
+                            }
+                            &:hover {
+                                background-color: var(--bg-color);
+                            }
+                            &.double-line {
+                                img {
+                                    width: 50px;
+                                    height: 50px;
+                                    object-fit: cover;
+                                    border-radius: 50px;
+                                    margin-right: 10px;
+                                }
+                                h5 {
+                                    margin-bottom: 0;
+                                    font-weight: bold;
+                                    font-size: 17px;
+                                    white-space: normal;
+                                    color: var(--black-color);
+                                }
+                                span {
+                                    white-space: normal;
+                                    font-size: 14px;
+                                }
+                            }
+                            i {
+                                font-size: 22px;
+                                width: 25px;
+                                margin-right: 5px;
+                                color: var(--black-color);
+                            }
+                            span {
+                                line-height: 0;
+                                color: var(--black-color);
+                            }
+                            .badge {
+                                padding: 10px;
+                                border-radius: 10px;
+                                margin-left: auto;
+                                color: var(--white-color);
+                            }
+                            &.is-new {
+                                background-color: var(--light-color);
+                                &::after {
+                                    position: absolute;
+                                    width: 10px;
+                                    height: 10px;
+                                    content: "";
+                                    background-color: var(--theme-color);
+                                    border-radius: 10px;
+                                    right: 10px;
+                                    top: 10px;
+                                }
+                                &:hover {
+                                    background-color: var(--bg-color);
+                                }
+                            }
+                        }
+                    }
+                    &.notification {
+                        .dropdown-menu {
+                            min-width: 350px;
+                            .dropdown-item {
+                                &.double-line {
+                                    img {
+                                        width: 40px;
+                                        height: 40px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &.service {
+                        .dropdown-menu {
+                            right: auto;
+                            left: 0;
+                            ul {
+                                padding: 10px;
+                                right: -52px;
+                                top: 51px;
+                                width: 350px;
+                                max-height: 500px;
+                                @include flexBox($align-items: flex-start, $flex-wrap: wrap);
+                                li {
+                                    width: 33.33%;
+                                    text-align: center;
+                                    padding: 5px;
+                                    .dropdown-item {
+                                        border: 1px solid var(--bg-color);
+                                        border-radius: 3px;
+                                        @include flexBox($flex-direction: column, $align-items: center);
+                                        text-align: center;
+                                        padding: 10px;
+                                        i {
+                                            font-size: 28px;
+                                        }
+                                        span {
+                                            font-size: 13px;
+                                            white-space: normal;
+                                            line-height: 15px;
+                                            text-transform: capitalize;
+                                        }
+                                        &.active{
+                                            background-color: var(--theme-color);
+                                            color: var(--white-color);
+                                            i, span{
+                                                color: var(--white-color);
+                                            }
+                                            &:hover{
+                                                background-color: var(--theme-darken);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width: 600px) {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            .navbar-brand {
+                display: none;
+            }
+            .navbar-nav {
+                .nav-item {
+                    &.dropdown {
+                        position: static;
+                        .dropdown-menu {
+                            left: 0;
+                            right: 0;
+                            top: 58px;
+                        }
+                    }
+                }
+            }
+        }
+        .search-bar {
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: -100px;
+            transition: all ease 0.3s;
+            button {
+                position: absolute;
+                right: 20px;
+                top: 0;
+                bottom: 0;
+                color: var(--secondary-color);
+                border: none;
+                background-color: transparent;
+                font-size: 28px;
+            }
+            .form-control {
+                height: 100%;
+                border: none;
+                border-radius: 0;
+                padding-left: 28px;
+                padding-right: 28px;
+                background-color: var(--white-color);
+                color: var(--black-color);
+            }
+            &.show {
+                top: 0;
+                bottom: 0;
+            }
+        }
+    }
+}
+// End navbar =======================>
